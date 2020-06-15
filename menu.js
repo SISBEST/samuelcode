@@ -11,9 +11,7 @@ const {
 } = require('electron-util');
 const config = require('./config');
 
-const showPreferences = () => {
-	// Show the app's preferences here
-};
+const showPreferences = () => {};
 
 const helpSubmenu = [
 	openUrlMenuItem({
@@ -51,6 +49,7 @@ if (!is.macos) {
 		},
 		aboutMenuItem({
 			icon: path.join(__dirname, 'static', 'icon.png'),
+			copyright: 'Main Program ©2020 Samuel Sharp \n Monaco Editor ©2020 Microsoft',
 			text: 'Created by Samuel Sharp'
 		})
 	);
@@ -104,7 +103,7 @@ const macosTemplate = [
 		role: 'fileMenu',
 		submenu: [
 			{
-				label: 'Custom'
+				label: 'SamuelCode'
 			},
 			{
 				type: 'separator'

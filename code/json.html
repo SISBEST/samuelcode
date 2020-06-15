@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>SamuelCode</title>
+  <link rel="stylesheet" href="../index.css">
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+	<div id="container" style="width:100vh;height:100vh;float:left;"></div>
+  <div style="float:right;">
+    <button onclick="save();">Save</button>
+    <button onclick="window.location.href = '../index.html';">Back</button>
+  </div>
+</body>
+<script>
+	(function() {
+		const path = require('path');
+		const amdLoader = require('../node_modules/monaco-editor/min/vs/loader.js');
+		const amdRequire = amdLoader.require;
+		const amdDefine = amdLoader.require.define;
+		function uriFromPath(_path) {
+			var pathName = path.resolve(_path).replace(/\\/g, '/');
+			if (pathName.length > 0 && pathName.charAt(0) !== '/') {
+				pathName = '/' + pathName;
+			}
+			return encodeURI('file://' + pathName);
+		}
+		amdRequire.config({
+			baseUrl: uriFromPath(path.join(__dirname, '../node_modules/monaco-editor/min'))
+		});
+		self.module = undefined;
+		amdRequire(['vs/editor/editor.main'], function() {
+			var editor = monaco.editor.create(document.getElementById('container'), {
+				value: '{}',
+				language: 'json',
+        theme: 'vs-dark'
+			});
+		});
+	})();
+</script>
+
+</html>

@@ -1,8 +1,8 @@
 {
 	"name": "samuelcode",
 	"productName": "SamuelCode",
-	"version": "0.0.0",
-	"description": "My flawless app",
+	"version": "0.0.1",
+	"description": "The official SamuelLang IDE.",
 	"license": "MIT",
 	"repository": "SISBEST/samuelcode",
 	"author": {
@@ -25,7 +25,8 @@
 		"electron-store": "^5.1.0",
 		"electron-unhandled": "^3.0.0",
 		"electron-updater": "^4.0.6",
-		"electron-util": "^0.13.0"
+		"electron-util": "^0.13.0",
+		"monaco-editor": "^0.20.0"
 	},
 	"devDependencies": {
 		"electron": "^7.1.1",
